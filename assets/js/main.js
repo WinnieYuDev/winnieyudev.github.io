@@ -115,3 +115,25 @@
 			});
 
 })(jQuery);
+
+// Back to top button
+ document.addEventListener("DOMContentLoaded", function () {
+      const backToTopBtn = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+    console.log('Scroll position:', window.scrollY);
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
+      backToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });

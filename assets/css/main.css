@@ -3221,3 +3221,18 @@ input, select, textarea {
 			}
 
 	}
+
+	/*my edits*/
+	.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none; /* Hidden by default */
+    z-index: 999;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.back-to-top.show {
+    display: inline-block;
+    opacity: 1;
+}
