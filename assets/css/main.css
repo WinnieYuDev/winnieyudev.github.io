@@ -3236,3 +3236,7 @@ input, select, textarea {
     display: inline-block;
     opacity: 1;
 }
+
+li{
+	list-style-type: none;
+}
