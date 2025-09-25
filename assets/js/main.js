@@ -117,23 +117,22 @@
 })(jQuery);
 
 // Back to top button
- document.addEventListener("DOMContentLoaded", function () {
-      const backToTopBtn = document.querySelector('.back-to-top');
+let mybutton = document.getElementById("backToTopBtn");
 
-window.addEventListener('scroll', () => {
-    console.log('Scroll position:', window.scrollY);
-    if (window.scrollY > 300) {
-        backToTopBtn.classList.add('show');
-    } else {
-        backToTopBtn.classList.remove('show');
-    }
-});
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
 
-      backToTopBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
-    });
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+mybutton.onclick = function() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+};
+	
